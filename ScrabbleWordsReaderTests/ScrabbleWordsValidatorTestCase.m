@@ -11,13 +11,9 @@
 
 #import "ScrabbleWordsValidator.h"
 
-#define USE_DEMO_FILE // Uncomment this define for speedier tests
+#import "ScrabbleWordsFactory.h"
 
-#ifdef USE_DEMO_FILE
-  static NSString * const kJSONFilename = @"demo";
-#else
-  static NSString * const kJSONFilename = @"scrabble-words";
-#endif
+#define USE_DEMO_FILE // Uncomment this define for speedier tests
 
 @interface ScrabbleWordsValidatorTestCase : XCTestCase
 
@@ -29,13 +25,15 @@
 
 - (void)setUp {
     [super setUp];
-
+    
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:kJSONFilename ofType:@"json"];
-    NSData *jsonData = [NSData dataWithContentsOfFile:jsonFilePath];
-    NSDictionary *scrabbleWords = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
-   
-    self.validator = [[ScrabbleWordsValidator alloc] initWithScrabbleWordsDictionary:scrabbleWords];
+#ifdef USE_DEMO_FILE
+    ScrabbleWordsFactory *wordsFactory = [[ScrabbleWordsFactory alloc] initWithConfiguration:ScrabbleWordsFactoryConfigDemoFile];
+#else
+    ScrabbleWordsFactory *wordsFactory = [[ScrabbleWordsFactory alloc] initWithConfiguration:ScrabbleWordsFactoryConfigDefault];
+#endif
+    
+    self.validator = [[ScrabbleWordsValidator alloc] initWithScrabbleWordsDictionary:wordsFactory.scrabbleWords];
 }
 
 - (void)tearDown {
@@ -52,7 +50,7 @@
 
 #ifndef USE_DEMO_FILE
 - (void)testZoophilicIsValidWord {
-    XCTAssertTrue([self.controller wordIsValid:@"zoophilic"]);
+    XCTAssertTrue([self.validator wordIsValid:@"zoophilic"]);
 }
 #endif
 
@@ -71,7 +69,7 @@
 
 #ifndef USE_DEMO_FILE
 - (void)testZoophiliciIsInvalidWord {
-    XCTAssertFalse([self.controller wordIsValid:@"zoophili"]); // zoophilic with missing last 'c'
+    XCTAssertFalse([self.validator wordIsValid:@"zoophili"]); // zoophilic with missing last 'c'
 }
 #endif
 
