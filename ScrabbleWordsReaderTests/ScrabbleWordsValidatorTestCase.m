@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-#import "ScrabbleWordsController.h"
+#import "ScrabbleWordsValidator.h"
 
 #define USE_DEMO_FILE // Uncomment this define for speedier tests
 
@@ -20,27 +20,23 @@
 #endif
 static NSString * const kJSONFileExt  = @"json";
 
+@interface ScrabbleWordsValidatorTestCase : XCTestCase
 
-@interface ScrabbleWordsController (XCTest)
-@property (nonatomic, strong, readonly) NSDictionary *scrabbleWords;
-@end
-
-@interface ScrabbleWordsControllerTestCase : XCTestCase
-
-@property (nonatomic, strong) ScrabbleWordsController *controller;
+@property (nonatomic, strong) ScrabbleWordsValidator *controller;
 
 @end
 
-@implementation ScrabbleWordsControllerTestCase
+@implementation ScrabbleWordsValidatorTestCase
 
 - (void)setUp {
     [super setUp];
 
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    self.controller = [[ScrabbleWordsController alloc] init];
-    
     NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:kJSONFilename ofType:kJSONFileExt];
-    [self.controller loadScrabbleWordsFromFilePath:jsonFilePath];
+    NSData *jsonData = [NSData dataWithContentsOfFile:jsonFilePath];
+    NSDictionary *scrabbleWords = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
+   
+    self.controller = [[ScrabbleWordsValidator alloc] initWithScrabbleWordsDictionary:scrabbleWords];
 }
 
 - (void)tearDown {
@@ -48,10 +44,6 @@ static NSString * const kJSONFileExt  = @"json";
     self.controller = nil;
     
     [super tearDown];
-}
-
-- (void)testCanLoadScrabbleWordsLoadJSON {
-    XCTAssertNotNil(self.controller.scrabbleWords, @"Scrabble words dictionary should not be nil");
 }
 
 //#pragma mark - Valid Words

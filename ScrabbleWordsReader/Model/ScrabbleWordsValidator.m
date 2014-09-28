@@ -6,19 +6,21 @@
 //  Copyright (c) 2014 Duchy Software. All rights reserved.
 //
 
-#import "ScrabbleWordsController.h"
+#import "ScrabbleWordsValidator.h"
 
-@interface ScrabbleWordsController ()
+@interface ScrabbleWordsValidator ()
 
 @property (nonatomic, strong) NSDictionary *scrabbleWords;
 
 @end
 
-@implementation ScrabbleWordsController
+@implementation ScrabbleWordsValidator
 
-- (void)loadScrabbleWordsFromFilePath:(NSString *)filepath {
-    NSData *jsonData = [NSData dataWithContentsOfFile:filepath];
-    self.scrabbleWords = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
+- (instancetype)initWithScrabbleWordsDictionary:(NSDictionary *)scrabbleWords {
+    if (self = [super init]) {
+        _scrabbleWords = scrabbleWords;
+    }
+    return self;
 }
 
 - (BOOL)wordIsValid:(NSString *)word {

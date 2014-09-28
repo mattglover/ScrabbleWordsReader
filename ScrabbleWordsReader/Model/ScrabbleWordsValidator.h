@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ScrabbleWordsController : NSObject
+@interface ScrabbleWordsValidator : NSObject
 
-- (void)loadScrabbleWordsFromFilePath:(NSString *)filepath;
+- (instancetype)initWithScrabbleWordsDictionary:(NSDictionary *)scrabbleWords;
 - (BOOL)wordIsValid:(NSString *)word;
 
 @end
