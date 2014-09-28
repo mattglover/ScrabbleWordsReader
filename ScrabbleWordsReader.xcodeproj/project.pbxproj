@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B24C7CD319D8408600DA858E /* ScrabbleWordsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24C7CD219D8408600DA858E /* ScrabbleWordsController.m */; };
 		B265CB3519D7F8A800DF3368 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B265CB3419D7F8A800DF3368 /* main.m */; };
 		B265CB3819D7F8A800DF3368 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B265CB3719D7F8A800DF3368 /* AppDelegate.m */; };
-		B265CB3B19D7F8A800DF3368 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B265CB3A19D7F8A800DF3368 /* ViewController.m */; };
 		B265CB3E19D7F8A800DF3368 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B265CB3C19D7F8A800DF3368 /* Main.storyboard */; };
 		B265CB4019D7F8A800DF3368 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B265CB3F19D7F8A800DF3368 /* Images.xcassets */; };
 		B265CB4319D7F8A800DF3368 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B265CB4119D7F8A800DF3368 /* LaunchScreen.xib */; };
-		B265CB4F19D7F8A800DF3368 /* ScrabbleWordsReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B265CB4E19D7F8A800DF3368 /* ScrabbleWordsReaderTests.m */; };
+		B265CB6019D7F95D00DF3368 /* scrabble-words.json in Resources */ = {isa = PBXBuildFile; fileRef = B265CB5F19D7F95D00DF3368 /* scrabble-words.json */; };
+		B265CB6219D7F9B700DF3368 /* ScrabbleWordsControllerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = B265CB6119D7F9B700DF3368 /* ScrabbleWordsControllerTestCase.m */; };
+		B265CB6319D7FDC100DF3368 /* scrabble-words.json in Resources */ = {isa = PBXBuildFile; fileRef = B265CB5F19D7F95D00DF3368 /* scrabble-words.json */; };
+		B265CB6619D800B100DF3368 /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = B265CB6419D800B100DF3368 /* demo.json */; };
+		B265CB6719D800B100DF3368 /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = B265CB6419D800B100DF3368 /* demo.json */; };
+		B265CB6C19D8034300DF3368 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B265CB6B19D8034300DF3368 /* ViewController.m */; };
+		B265CB6D19D8034300DF3368 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B265CB6B19D8034300DF3368 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +33,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B24C7CD119D8408600DA858E /* ScrabbleWordsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrabbleWordsController.h; sourceTree = "<group>"; };
+		B24C7CD219D8408600DA858E /* ScrabbleWordsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrabbleWordsController.m; sourceTree = "<group>"; };
 		B265CB2F19D7F8A800DF3368 /* ScrabbleWordsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrabbleWordsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B265CB3319D7F8A800DF3368 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B265CB3419D7F8A800DF3368 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B265CB3619D7F8A800DF3368 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B265CB3719D7F8A800DF3368 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B265CB3919D7F8A800DF3368 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B265CB3A19D7F8A800DF3368 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B265CB3D19D7F8A800DF3368 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B265CB3F19D7F8A800DF3368 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B265CB3F19D7F8A800DF3368 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../Images.xcassets; sourceTree = "<group>"; };
 		B265CB4219D7F8A800DF3368 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B265CB4819D7F8A800DF3368 /* ScrabbleWordsReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrabbleWordsReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B265CB4D19D7F8A800DF3368 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B265CB4E19D7F8A800DF3368 /* ScrabbleWordsReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrabbleWordsReaderTests.m; sourceTree = "<group>"; };
+		B265CB5F19D7F95D00DF3368 /* scrabble-words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "scrabble-words.json"; sourceTree = "<group>"; };
+		B265CB6119D7F9B700DF3368 /* ScrabbleWordsControllerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrabbleWordsControllerTestCase.m; sourceTree = "<group>"; };
+		B265CB6419D800B100DF3368 /* demo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = demo.json; sourceTree = "<group>"; };
+		B265CB6A19D8034300DF3368 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B265CB6B19D8034300DF3368 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +91,10 @@
 		B265CB3119D7F8A800DF3368 /* ScrabbleWordsReader */ = {
 			isa = PBXGroup;
 			children = (
-				B265CB3619D7F8A800DF3368 /* AppDelegate.h */,
-				B265CB3719D7F8A800DF3368 /* AppDelegate.m */,
-				B265CB3919D7F8A800DF3368 /* ViewController.h */,
-				B265CB3A19D7F8A800DF3368 /* ViewController.m */,
-				B265CB3C19D7F8A800DF3368 /* Main.storyboard */,
-				B265CB3F19D7F8A800DF3368 /* Images.xcassets */,
-				B265CB4119D7F8A800DF3368 /* LaunchScreen.xib */,
+				B265CB5B19D7F8DE00DF3368 /* Resources */,
+				B265CB5A19D7F8C000DF3368 /* Model */,
+				B265CB5919D7F8BC00DF3368 /* View */,
+				B265CB5819D7F8B800DF3368 /* Controller */,
 				B265CB3219D7F8A800DF3368 /* Supporting Files */,
 			);
 			path = ScrabbleWordsReader;
@@ -96,6 +103,8 @@
 		B265CB3219D7F8A800DF3368 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B265CB3619D7F8A800DF3368 /* AppDelegate.h */,
+				B265CB3719D7F8A800DF3368 /* AppDelegate.m */,
 				B265CB3319D7F8A800DF3368 /* Info.plist */,
 				B265CB3419D7F8A800DF3368 /* main.m */,
 			);
@@ -105,8 +114,8 @@
 		B265CB4B19D7F8A800DF3368 /* ScrabbleWordsReaderTests */ = {
 			isa = PBXGroup;
 			children = (
-				B265CB4E19D7F8A800DF3368 /* ScrabbleWordsReaderTests.m */,
 				B265CB4C19D7F8A800DF3368 /* Supporting Files */,
+				B265CB6119D7F9B700DF3368 /* ScrabbleWordsControllerTestCase.m */,
 			);
 			path = ScrabbleWordsReaderTests;
 			sourceTree = "<group>";
@@ -117,6 +126,67 @@
 				B265CB4D19D7F8A800DF3368 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B265CB5819D7F8B800DF3368 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B265CB6A19D8034300DF3368 /* ViewController.h */,
+				B265CB6B19D8034300DF3368 /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B265CB5919D7F8BC00DF3368 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B265CB5A19D7F8C000DF3368 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B24C7CD119D8408600DA858E /* ScrabbleWordsController.h */,
+				B24C7CD219D8408600DA858E /* ScrabbleWordsController.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B265CB5B19D7F8DE00DF3368 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B265CB5E19D7F94600DF3368 /* Data */,
+				B265CB5D19D7F8ED00DF3368 /* Storyboards */,
+				B265CB5C19D7F8E800DF3368 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B265CB5C19D7F8E800DF3368 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B265CB3F19D7F8A800DF3368 /* Images.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		B265CB5D19D7F8ED00DF3368 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B265CB3C19D7F8A800DF3368 /* Main.storyboard */,
+				B265CB4119D7F8A800DF3368 /* LaunchScreen.xib */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B265CB5E19D7F94600DF3368 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B265CB5F19D7F95D00DF3368 /* scrabble-words.json */,
+				B265CB6419D800B100DF3368 /* demo.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,7 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B265CB3E19D7F8A800DF3368 /* Main.storyboard in Resources */,
+				B265CB6019D7F95D00DF3368 /* scrabble-words.json in Resources */,
 				B265CB4319D7F8A800DF3368 /* LaunchScreen.xib in Resources */,
+				B265CB6619D800B100DF3368 /* demo.json in Resources */,
 				B265CB4019D7F8A800DF3368 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +281,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B265CB6719D800B100DF3368 /* demo.json in Resources */,
+				B265CB6319D7FDC100DF3368 /* scrabble-words.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +293,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B265CB3B19D7F8A800DF3368 /* ViewController.m in Sources */,
+				B265CB6C19D8034300DF3368 /* ViewController.m in Sources */,
+				B24C7CD319D8408600DA858E /* ScrabbleWordsController.m in Sources */,
 				B265CB3819D7F8A800DF3368 /* AppDelegate.m in Sources */,
 				B265CB3519D7F8A800DF3368 /* main.m in Sources */,
 			);
@@ -229,7 +304,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B265CB4F19D7F8A800DF3368 /* ScrabbleWordsReaderTests.m in Sources */,
+				B265CB6D19D8034300DF3368 /* ViewController.m in Sources */,
+				B265CB6219D7F9B700DF3368 /* ScrabbleWordsControllerTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +326,7 @@
 				B265CB3D19D7F8A800DF3368 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		B265CB4119D7F8A800DF3368 /* LaunchScreen.xib */ = {
@@ -258,6 +335,7 @@
 				B265CB4219D7F8A800DF3368 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -412,6 +490,7 @@
 				B265CB5419D7F8A800DF3368 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B265CB5519D7F8A800DF3368 /* Build configuration list for PBXNativeTarget "ScrabbleWordsReaderTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +499,7 @@
 				B265CB5719D7F8A800DF3368 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
