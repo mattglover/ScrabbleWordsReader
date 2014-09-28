@@ -18,11 +18,10 @@
 #else
   static NSString * const kJSONFilename = @"scrabble-words";
 #endif
-static NSString * const kJSONFileExt  = @"json";
 
 @interface ScrabbleWordsValidatorTestCase : XCTestCase
 
-@property (nonatomic, strong) ScrabbleWordsValidator *controller;
+@property (nonatomic, strong) ScrabbleWordsValidator *validator;
 
 @end
 
@@ -32,23 +31,23 @@ static NSString * const kJSONFileExt  = @"json";
     [super setUp];
 
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:kJSONFilename ofType:kJSONFileExt];
+    NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:kJSONFilename ofType:@"json"];
     NSData *jsonData = [NSData dataWithContentsOfFile:jsonFilePath];
     NSDictionary *scrabbleWords = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
    
-    self.controller = [[ScrabbleWordsValidator alloc] initWithScrabbleWordsDictionary:scrabbleWords];
+    self.validator = [[ScrabbleWordsValidator alloc] initWithScrabbleWordsDictionary:scrabbleWords];
 }
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
-    self.controller = nil;
+    self.validator = nil;
     
     [super tearDown];
 }
 
 //#pragma mark - Valid Words
 - (void)testAAHIsValidWord {
-    XCTAssertTrue([self.controller wordIsValid:@"aah"]);
+    XCTAssertTrue([self.validator wordIsValid:@"aah"]);
 }
 
 #ifndef USE_DEMO_FILE
@@ -59,15 +58,15 @@ static NSString * const kJSONFileExt  = @"json";
 
 #pragma mark - Invalid Words
 - (void)testTwoCharacterWordIsInvalid {
-    XCTAssertFalse([self.controller wordIsValid:@"aa"]);
+    XCTAssertFalse([self.validator wordIsValid:@"aa"]);
 }
 
 - (void)testAQQIsInvalidWord {
-    XCTAssertFalse([self.controller wordIsValid:@"aqq"]);
+    XCTAssertFalse([self.validator wordIsValid:@"aqq"]);
 }
 
 - (void)testAasvogeIsInvalid {
-    XCTAssertFalse([self.controller wordIsValid:@"aasvog"]); // mis-spelling
+    XCTAssertFalse([self.validator wordIsValid:@"aasvog"]); // mis-spelling
 }
 
 #ifndef USE_DEMO_FILE
