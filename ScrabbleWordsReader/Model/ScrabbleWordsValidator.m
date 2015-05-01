@@ -10,7 +10,7 @@
 
 @interface ScrabbleWordsValidator ()
 
-@property (nonatomic, strong) NSDictionary *scrabbleWords;
+@property (nonatomic, strong, readwrite) NSDictionary *scrabbleWords;
 
 @end
 
@@ -35,11 +35,12 @@
     
     [letters enumerateObjectsUsingBlock:^(NSString *letter, NSUInteger idx, BOOL *stop) {
         
-        if ([[dictionaryInFocus allKeys] containsObject:letter]) {
+        if ([dictionaryInFocus isKindOfClass:[NSDictionary class]] && [[dictionaryInFocus allKeys] containsObject:letter]) {
             dictionaryInFocus = dictionaryInFocus[letter];
             BOOL isLastLetter = idx + 1 == [letters count];
             if (isLastLetter && [dictionaryInFocus isKindOfClass:[NSDictionary class]] && ![[dictionaryInFocus allKeys] containsObject:@"$"]) {
                 isValid = NO;
+                *stop = YES;
             } else {
                 isValid = YES;
             }
@@ -62,6 +63,57 @@
     }
     
     return [letters copy];
+}
+
+- (NSArray *)randomValidWordsFromLetters:(NSString *)allLetters maxWordLength:(NSUInteger)maxWordLength {
+
+    NSMutableArray *randomValidWords = [NSMutableArray array];
+    
+    NSUInteger maxNumberAttempts = 60000;
+    for (int loop = 0; loop < maxNumberAttempts; loop++) {
+        NSString *randomString = [self randomStringFromLetters:allLetters maxLength:maxWordLength];
+        if ([self wordIsValid:randomString]) {
+            [randomValidWords addObject:randomString];
+        }
+    }
+    
+    if ([randomValidWords count] == 0) {
+        for (int loop = 0; loop < (maxNumberAttempts / 2); loop++) {
+            NSString *randomString = [self randomStringFromLetters:allLetters maxLength:maxWordLength - 1];
+            if ([self wordIsValid:randomString]) {
+                [randomValidWords addObject:randomString];
+            }
+        }
+    }
+    
+    return randomValidWords;
+}
+
+- (NSString *)randomStringFromLetters:(NSString *)allLetters maxLength:(NSUInteger)maxLength {
+    
+    NSArray *letters = [self lettersFromString:allLetters];
+    
+    NSMutableString *randomLetterCombination = [NSMutableString stringWithCapacity:maxLength];
+    NSMutableArray *selectedIndexes = [NSMutableArray arrayWithCapacity:maxLength];
+    uint32_t r;
+    while ([selectedIndexes count] < maxLength) {
+        r = arc4random_uniform((uint32_t)[letters count]);
+        if (![selectedIndexes containsObject:@(r)]) {
+            [selectedIndexes addObject:@(r)];
+            [randomLetterCombination appendFormat:@"%@", letters[r]];
+        }
+    }
+    
+    return randomLetterCombination;
+}
+
+- (NSArray *)lettersFromString:(NSString *)string {
+    NSMutableArray *array = [NSMutableArray array];
+    for (int i = 0; i < [string length]; i++) {
+        NSString *character = [string substringWithRange:NSMakeRange(i, 1)];
+        [array addObject:character];
+    }
+    return array;
 }
 
 @end

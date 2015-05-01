@@ -10,7 +10,11 @@
 
 @interface ScrabbleWordsValidator : NSObject
 
+@property (nonatomic, strong, readonly) NSDictionary *scrabbleWords;
+
 - (instancetype)initWithScrabbleWordsDictionary:(NSDictionary *)scrabbleWords;
 - (BOOL)wordIsValid:(NSString *)word;
+
+- (NSArray *)randomValidWordsFromLetters:(NSString *)allLetters maxWordLength:(NSUInteger)maxWordLength;
 
 @end

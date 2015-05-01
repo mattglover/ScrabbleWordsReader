@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B21F8BA419D8B65F00EC3C95 /* ScrabbleWordsPointsSorter.m in Sources */ = {isa = PBXBuildFile; fileRef = B21F8BA319D8B65F00EC3C95 /* ScrabbleWordsPointsSorter.m */; };
+		B21F8BA619D8B66A00EC3C95 /* ScrabbleWordsPointsSorterTextCase.m in Sources */ = {isa = PBXBuildFile; fileRef = B21F8BA519D8B66A00EC3C95 /* ScrabbleWordsPointsSorterTextCase.m */; };
+		B21F8BA919D8BA9600EC3C95 /* ScrabbleWord.m in Sources */ = {isa = PBXBuildFile; fileRef = B21F8BA819D8BA9600EC3C95 /* ScrabbleWord.m */; };
 		B24C7CD319D8408600DA858E /* ScrabbleWordsValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B24C7CD219D8408600DA858E /* ScrabbleWordsValidator.m */; };
 		B24C7CD519D8468D00DA858E /* ScrabbleWordsFactoryTextCase.m in Sources */ = {isa = PBXBuildFile; fileRef = B24C7CD419D8468D00DA858E /* ScrabbleWordsFactoryTextCase.m */; };
 		B24C7CDB19D84D5800DA858E /* ScrabbleWordsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B24C7CDA19D84D5800DA858E /* ScrabbleWordsFactory.m */; };
+		B24C7CE019D8560900DA858E /* ScrabbleWordsServiceTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = B24C7CDF19D8560900DA858E /* ScrabbleWordsServiceTestCase.m */; };
+		B24C7CE319D8562100DA858E /* ScrabbleWordsService.m in Sources */ = {isa = PBXBuildFile; fileRef = B24C7CE219D8562100DA858E /* ScrabbleWordsService.m */; };
+		B24C7CE419D8562100DA858E /* ScrabbleWordsService.m in Sources */ = {isa = PBXBuildFile; fileRef = B24C7CE219D8562100DA858E /* ScrabbleWordsService.m */; };
 		B265CB3519D7F8A800DF3368 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B265CB3419D7F8A800DF3368 /* main.m */; };
 		B265CB3819D7F8A800DF3368 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B265CB3719D7F8A800DF3368 /* AppDelegate.m */; };
 		B265CB3E19D7F8A800DF3368 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B265CB3C19D7F8A800DF3368 /* Main.storyboard */; };
@@ -35,11 +41,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B21F8BA219D8B65F00EC3C95 /* ScrabbleWordsPointsSorter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrabbleWordsPointsSorter.h; sourceTree = "<group>"; };
+		B21F8BA319D8B65F00EC3C95 /* ScrabbleWordsPointsSorter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrabbleWordsPointsSorter.m; sourceTree = "<group>"; };
+		B21F8BA519D8B66A00EC3C95 /* ScrabbleWordsPointsSorterTextCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrabbleWordsPointsSorterTextCase.m; sourceTree = "<group>"; };
+		B21F8BA719D8BA9600EC3C95 /* ScrabbleWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrabbleWord.h; sourceTree = "<group>"; };
+		B21F8BA819D8BA9600EC3C95 /* ScrabbleWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrabbleWord.m; sourceTree = "<group>"; };
 		B24C7CD119D8408600DA858E /* ScrabbleWordsValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrabbleWordsValidator.h; sourceTree = "<group>"; };
 		B24C7CD219D8408600DA858E /* ScrabbleWordsValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrabbleWordsValidator.m; sourceTree = "<group>"; };
 		B24C7CD419D8468D00DA858E /* ScrabbleWordsFactoryTextCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrabbleWordsFactoryTextCase.m; sourceTree = "<group>"; };
 		B24C7CD919D84D5800DA858E /* ScrabbleWordsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrabbleWordsFactory.h; sourceTree = "<group>"; };
 		B24C7CDA19D84D5800DA858E /* ScrabbleWordsFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrabbleWordsFactory.m; sourceTree = "<group>"; };
+		B24C7CDF19D8560900DA858E /* ScrabbleWordsServiceTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrabbleWordsServiceTestCase.m; sourceTree = "<group>"; };
+		B24C7CE119D8562100DA858E /* ScrabbleWordsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrabbleWordsService.h; sourceTree = "<group>"; };
+		B24C7CE219D8562100DA858E /* ScrabbleWordsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrabbleWordsService.m; sourceTree = "<group>"; };
 		B265CB2F19D7F8A800DF3368 /* ScrabbleWordsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrabbleWordsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B265CB3319D7F8A800DF3368 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B265CB3419D7F8A800DF3368 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -120,8 +134,10 @@
 			isa = PBXGroup;
 			children = (
 				B265CB4C19D7F8A800DF3368 /* Supporting Files */,
-				B265CB6119D7F9B700DF3368 /* ScrabbleWordsValidatorTestCase.m */,
 				B24C7CD419D8468D00DA858E /* ScrabbleWordsFactoryTextCase.m */,
+				B265CB6119D7F9B700DF3368 /* ScrabbleWordsValidatorTestCase.m */,
+				B24C7CDF19D8560900DA858E /* ScrabbleWordsServiceTestCase.m */,
+				B21F8BA519D8B66A00EC3C95 /* ScrabbleWordsPointsSorterTextCase.m */,
 			);
 			path = ScrabbleWordsReaderTests;
 			sourceTree = "<group>";
@@ -153,10 +169,16 @@
 		B265CB5A19D7F8C000DF3368 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B24C7CD119D8408600DA858E /* ScrabbleWordsValidator.h */,
-				B24C7CD219D8408600DA858E /* ScrabbleWordsValidator.m */,
 				B24C7CD919D84D5800DA858E /* ScrabbleWordsFactory.h */,
 				B24C7CDA19D84D5800DA858E /* ScrabbleWordsFactory.m */,
+				B24C7CD119D8408600DA858E /* ScrabbleWordsValidator.h */,
+				B24C7CD219D8408600DA858E /* ScrabbleWordsValidator.m */,
+				B24C7CE119D8562100DA858E /* ScrabbleWordsService.h */,
+				B24C7CE219D8562100DA858E /* ScrabbleWordsService.m */,
+				B21F8BA219D8B65F00EC3C95 /* ScrabbleWordsPointsSorter.h */,
+				B21F8BA319D8B65F00EC3C95 /* ScrabbleWordsPointsSorter.m */,
+				B21F8BA719D8BA9600EC3C95 /* ScrabbleWord.h */,
+				B21F8BA819D8BA9600EC3C95 /* ScrabbleWord.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,6 +324,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B265CB6C19D8034300DF3368 /* ViewController.m in Sources */,
+				B24C7CE319D8562100DA858E /* ScrabbleWordsService.m in Sources */,
+				B21F8BA419D8B65F00EC3C95 /* ScrabbleWordsPointsSorter.m in Sources */,
+				B21F8BA919D8BA9600EC3C95 /* ScrabbleWord.m in Sources */,
 				B24C7CDB19D84D5800DA858E /* ScrabbleWordsFactory.m in Sources */,
 				B24C7CD319D8408600DA858E /* ScrabbleWordsValidator.m in Sources */,
 				B265CB3819D7F8A800DF3368 /* AppDelegate.m in Sources */,
@@ -314,8 +339,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B265CB6D19D8034300DF3368 /* ViewController.m in Sources */,
+				B24C7CE419D8562100DA858E /* ScrabbleWordsService.m in Sources */,
 				B24C7CD519D8468D00DA858E /* ScrabbleWordsFactoryTextCase.m in Sources */,
 				B265CB6219D7F9B700DF3368 /* ScrabbleWordsValidatorTestCase.m in Sources */,
+				B21F8BA619D8B66A00EC3C95 /* ScrabbleWordsPointsSorterTextCase.m in Sources */,
+				B24C7CE019D8560900DA858E /* ScrabbleWordsServiceTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

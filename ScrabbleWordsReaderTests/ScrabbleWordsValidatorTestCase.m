@@ -13,7 +13,8 @@
 
 #import "ScrabbleWordsFactory.h"
 
-#define USE_DEMO_FILE // Uncomment this define for speedier tests
+//#define USE_DEMO_FILE // Uncomment this define for speedier tests
+//#define EXTENDED_RANDOM_WORD_GENERATE_TEST // Comment this define for speedier tests
 
 @interface ScrabbleWordsValidatorTestCase : XCTestCase
 
@@ -25,15 +26,15 @@
 
 - (void)setUp {
     [super setUp];
-    
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+
 #ifdef USE_DEMO_FILE
     ScrabbleWordsFactory *wordsFactory = [[ScrabbleWordsFactory alloc] initWithConfiguration:ScrabbleWordsFactoryConfigDemoFile];
 #else
     ScrabbleWordsFactory *wordsFactory = [[ScrabbleWordsFactory alloc] initWithConfiguration:ScrabbleWordsFactoryConfigDefault];
 #endif
     
-    self.validator = [[ScrabbleWordsValidator alloc] initWithScrabbleWordsDictionary:wordsFactory.scrabbleWords];
+    NSDictionary *wordsDictionary = wordsFactory.scrabbleWords;
+    self.validator = [[ScrabbleWordsValidator alloc] initWithScrabbleWordsDictionary:wordsDictionary];
 }
 
 - (void)tearDown {
@@ -43,16 +44,10 @@
     [super tearDown];
 }
 
-//#pragma mark - Valid Words
+#pragma mark - Valid Words
 - (void)testAAHIsValidWord {
-    XCTAssertTrue([self.validator wordIsValid:@"aah"]);
+    XCTAssertTrue([self.validator wordIsValid:@"aah"]); // XXXXXXXXXXXXXXX
 }
-
-#ifndef USE_DEMO_FILE
-- (void)testZoophilicIsValidWord {
-    XCTAssertTrue([self.validator wordIsValid:@"zoophilic"]);
-}
-#endif
 
 #pragma mark - Invalid Words
 - (void)testTwoCharacterWordIsInvalid {
@@ -67,11 +62,62 @@
     XCTAssertFalse([self.validator wordIsValid:@"aasvog"]); // mis-spelling
 }
 
+/**
+ USING DEFAULT WORDS FILE
+*/
 #ifndef USE_DEMO_FILE
-- (void)testZoophiliciIsInvalidWord {
+- (void)testZoophilicIsValidWord {
+    XCTAssertTrue([self.validator wordIsValid:@"zoophilic"]);
+}
+
+- (void)testZoophiliIsInvalidWord {
     XCTAssertFalse([self.validator wordIsValid:@"zoophili"]); // zoophilic with missing last 'c'
 }
-#endif
+
+- (void)test_saet_IsInvalidWord {
+    XCTAssertFalse([self.validator wordIsValid:@"saet"]);
+}
+
+- (void)testGenerateRandomValidWords {
+    NSArray *randomValidWords = [self.validator randomValidWordsFromLetters:@"atrmasoiel" maxWordLength:6];
+    XCTAssertGreaterThan([randomValidWords count], 0);
+}
+
+- (void)testGenerate5LetterRandomValidWordsWhenZero6LetterWordsOccur {
+    NSArray *randomValidWords = [self.validator randomValidWordsFromLetters:@"zzzzzzamia" maxWordLength:6];
+    XCTAssertGreaterThan([randomValidWords count], 0);
+    NSLog(@"Count: %lu", [randomValidWords count]);
+    XCTAssertEqual([randomValidWords[0] length], 5);
+}
+
+#ifdef EXTENDED_RANDOM_WORD_GENERATE_TEST
+- (void)testGenerateRandomValidWords_fromActualGame_1 {
+    NSArray *randomValidWords = [self.validator randomValidWordsFromLetters:@"sryeornniieg" maxWordLength:6];
+    NSLog(@"Count: %lu", [randomValidWords count]);
+    XCTAssertGreaterThan([randomValidWords count], 0);
+}
+
+- (void)testGenerateRandomValidWords_fromActualGame_2 {
+    NSArray *randomValidWords = [self.validator randomValidWordsFromLetters:@"paegatslmmoa" maxWordLength:6];
+    NSLog(@"Count: %lu", [randomValidWords count]);
+    XCTAssertGreaterThan([randomValidWords count], 0);
+}
+
+- (void)testGenerateRandomValidWords_fromActualGame_3 {
+    NSArray *randomValidWords = [self.validator randomValidWordsFromLetters:@"ntteuwieadfh" maxWordLength:6];
+    NSLog(@"Count: %lu", [randomValidWords count]);
+    XCTAssertGreaterThan([randomValidWords count], 0);
+}
+
+- (void)testGenerateRandomValidWords_fromActualGame_4 {
+    NSArray *randomValidWords = [self.validator randomValidWordsFromLetters:@"aneaoihcsnnr" maxWordLength:6];
+    NSLog(@"Count: %lu", [randomValidWords count]);
+    XCTAssertGreaterThan([randomValidWords count], 0);
+}
+
+#endif // EXTENDED_RANDOM_WORD_GENERATE_TEST
+
+#endif // USE_DEMO_FILE
 
 #pragma mark - Performance Test
 - (void)testPerformanceExample {

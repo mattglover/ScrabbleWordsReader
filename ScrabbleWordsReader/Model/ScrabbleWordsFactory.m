@@ -11,7 +11,7 @@
 @interface ScrabbleWordsFactory ()
 
 @property (nonatomic, assign) ScrabbleWordsFactoryConfig configuration;
-@property (nonatomic, strong, readwrite) NSDictionary *scrabbleWords;
+@property (nonatomic, strong) NSDictionary *scrabbleWords;
 
 @end
 
@@ -37,7 +37,7 @@
     
     switch (self.configuration) {
         case ScrabbleWordsFactoryConfigDefault:
-            scrabbleWordsJSONFilename =  @"scrabble-words";
+            scrabbleWordsJSONFilename = @"scrabble-words";
             break;
         
         case ScrabbleWordsFactoryConfigDemoFile:
@@ -47,7 +47,11 @@
     
     NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:scrabbleWordsJSONFilename ofType:@"json"];
     NSData *jsonData = [NSData dataWithContentsOfFile:jsonFilePath];
-    self.scrabbleWords = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
+    NSError *error;
+    _scrabbleWords = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+    if (error) {
+        NSLog(@"Error: %@", [error localizedDescription]);
+    }
 }
 
 @end
